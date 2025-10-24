@@ -1,0 +1,206 @@
+/* === Estilo general === */
+body {
+  margin: 0;
+  background-color: #1e1e1e;
+  color: #eee;
+  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* === Contenedor del canvas === */
+#sketch-holder {
+  border: 2px solid #333;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(50, 152, 220, 0.3);
+}
+
+/* === Controles principales === */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* --- Botón Reiniciar --- */
+#restartBtn {
+  padding: 8px 16px;
+  font-size: 15px;
+  background: linear-gradient(135deg, #3298dc, #2274a5);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+#restartBtn:hover {
+  background: linear-gradient(135deg, #4aa3e0, #3298dc);
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(50, 152, 220, 0.6);
+}
+
+/* --- Slider de velocidad --- */
+#speedSlider {
+  -webkit-appearance: none;
+  width: 150px;
+  height: 6px;
+  border-radius: 5px;
+  background: #ddd;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#speedSlider:hover {
+  background: #ccc;
+}
+
+/* Thumb (boleta) */
+#speedSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #3298dc;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+#speedSlider::-webkit-slider-thumb:hover {
+  background: #2274a5;
+  transform: scale(1.2);
+}
+#speedSlider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #3298dc;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+#speedSlider::-moz-range-thumb:hover {
+  background: #2274a5;
+  transform: scale(1.2);
+}
+
+/* Valor numérico de velocidad */
+#speedValue {
+  font-weight: bold;
+  color: #3298dc;
+}
+
+/* === Botones de modo === */
+#mode-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.mode-btn {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 2px solid #444;
+  background-color: #3b3b3b;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s;
+}
+
+.mode-btn:hover {
+  background-color: #555;
+  transform: translateY(-2px);
+}
+
+/* Botón activo */
+.mode-btn.active {
+  background-color: #2196f3;
+  border-color: #0d47a1;
+  box-shadow: 0 0 10px rgba(33, 150, 243, 0.6);
+}
+
+
+@media (max-width: 800px) {
+  .controls,
+  #mode-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #speedSlider {
+    width: 130px;
+  }
+
+  .controls button,
+  .mode-btn {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+}
+
+
+  #sketch-holder canvas {
+    width: auto !important;  /* 90% del ancho de la pantalla */
+    max-height: 70vh;       /* Evita que crezca demasiado */
+    border-radius: 10px;
+  }
+
+/* === Adaptación para móvil (pantallas pequeñas) === */
+@media (max-width: 700px) {
+  #mode-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 24px; /* 💡 Mayor separación entre columnas */
+    row-gap: 8px; /* Espacio entre filas */
+    justify-items: center;
+  }
+
+  .mode-btn {
+    font-size: 12px;
+    padding: 5px 8px;
+    border-radius: 6px;
+    width: 100px;
+    height: 36px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  #speedSlider {
+    width: 100px;
+  }
+
+  #restartBtn {
+    font-size: 13px;
+    padding: 6px 10px;
+    border-radius: 6px;
+  }
+
+  /* === Canvas responsive === */
+
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+

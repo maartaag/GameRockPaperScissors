@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Piedra Papel Tijera Partículas</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+  </head>
+
+  <body>
+    <main>
+      <div id="sketch-holder">
+        <script src="sketch.js"></script>
+      </div>
+
+      <div class="controls">
+        <button id="restartBtn">🔁 Reiniciar</button>
+
+        <label for="speedSlider">Velocidad:</label>
+        <input
+          type="range"
+          id="speedSlider"
+          min="0.5"
+          max="2"
+          step="0.1"
+          value="1"
+        />
+        <span id="speedValue">1x</span>
+      </div>
+
+      <div id="mode-buttons">
+        <button id="btnExplosion" class="mode-btn active">💥 Explosión</button>
+        <button id="btnRoca" class="mode-btn">🪨 Piedra</button>
+        <button id="btnPapel" class="mode-btn">📄 Papel</button>
+        <button id="btnTijera" class="mode-btn">✂️ Tijera</button>
+      </div>
+    </main>
+  </body>
+</html>
